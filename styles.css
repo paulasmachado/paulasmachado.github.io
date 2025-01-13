@@ -1,0 +1,568 @@
+/* Estilos generales */
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+header {
+    display: inline-flex;
+    justify-content: right; /* Centra el contenido horizontalmente */
+    align-items: center; /* Alinea el logo y los textos verticalmente */
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+header nav ul {
+    display: flex;
+    gap: 50px; /* Espacio entre los enlaces */
+    padding-right: 45px;
+}
+
+header nav a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+header nav a:hover {
+    color: #280c6e; /* Cambia el color al pasar el ratón */
+    transform: scale(1.2); /* Expande el texto */
+}
+
+/* Logo */
+.logo {
+    position: absolute; /* Mantiene el logo en la parte izquierda */
+    left: 20px;
+    top: 12px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #280c6e;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.logo a:hover {
+    color: #333; /* Cambia el color al pasar el ratón */
+    transform: scale(1.2); /* Expande el texto */
+}
+
+
+
+/* Portada */
+.collage-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.collage-item {
+    position: absolute;
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.collage-item img {
+    width: 10vw;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Posiciones iniciales (fuera del contenedor) */
+.collage-item:nth-child(1) { top: -10vh; left: -10vw; }
+.collage-item:nth-child(2) { top: -10vh; left: 110vw; }
+.collage-item:nth-child(3) { top: 110vh; left: 110vw; }
+.collage-item:nth-child(4) { top: 110vh; left: -10vw; }
+.collage-item:nth-child(5) { top: 50%; left: 110vw; }
+
+/* Animación de entrada */
+.collage-container:hover .collage-item:nth-child(1) {
+    transform: translate(35vw, 30vh) scale(1.8);
+    opacity: 1;
+    pointer-events: auto;
+}
+.collage-container:hover .collage-item:nth-child(2) {
+    transform: translate(-40vw, 27vh) scale(1.4);
+    opacity: 1;
+    pointer-events: auto;
+}
+.collage-container:hover .collage-item:nth-child(3) {
+    transform: translate(-65vw, -34vh) scale(1.6);
+    opacity: 1;
+    pointer-events: auto;
+}
+.collage-container:hover .collage-item:nth-child(4) {
+    transform: translate(20vw, -50vh) scale(1.4);
+    opacity: 1;
+    pointer-events: auto;
+}
+.collage-container:hover .collage-item:nth-child(5) {
+    transform: translate(-30vw, 10vh) scale(1.4);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Texto en la portada */
+/* Estilo general del contenedor de texto */
+.texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Estilo del título principal */
+.titulo-principal {
+    font-size: 3vw; 
+    font-weight: bold;
+    color: #333;
+    margin: 0; 
+    margin-right: 30px;
+    text-transform: uppercase;
+}
+
+/* Estilo del subtítulo */
+.subtitulo {
+    font-size: 2vw; 
+    font-weight: normal;
+    color: #280c6e ;
+    margin-top: 2px; /* Espaciado */
+    margin-left: 30px;
+    font-style: italic;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 6vw; /* Ajuste responsivo */
+    }
+    .subtitulo {
+        font-size: 3vw; /* Ajuste responsivo */
+    }
+}
+
+
+/* About */
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100vh; /* Ocupa toda la pantalla */
+    width: 100%; 
+    padding: 4vw; 
+    box-sizing: border-box; /* Considera el padding dentro de las dimensiones */
+    background-color: #d8dbd3; /* Fondo claro */
+}
+
+.about-title-line {
+    display: flex; /* Hace que los textos estén en la misma línea */
+    justify-content: left; /* Centra el contenido horizontalmente */
+    align-items: center; /* Alinea verticalmente al centro */
+    gap: 1vw; /* Espaciado entre "ABOUT" y "me" */
+}
+
+.about-title {
+    font-size: 3vw;
+    font-weight: bold;
+    color: #280c6e;
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+.me-title {
+    font-size: 2.5vw;
+    font-weight: lighter;
+    color: #555;
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    gap: 8vw; /* Espaciado entre columnas */
+    padding: 5vw;
+    box-sizing: border-box;
+}
+
+.about-column {
+    flex: 1; /* Hace que las columnas ocupen el mismo espacio */
+    max-width: 50%; /* Limita el ancho de cada columna */
+    text-align: left;
+}
+
+.about-column h2 {
+    margin-bottom: 1rem; /* AÑADIDO: Ajusta la separación */
+    margin-top: 2rem; /* Espacio adicional antes de cada sección (e.g., Work) */
+}
+
+.about-column p {
+    margin-bottom: 0.2rem; /* Espacio entre párrafos */
+    margin-top: 0; /* Elimina espacio superior si existe */
+}
+
+.bold-text {
+    font-weight: bold; /* Aplica el estilo en negrita */
+}
+
+
+.about-image img {
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+    border-radius: 50%; /* Redondea la imagen */
+    margin-bottom: 0rem;
+}
+
+.hello {
+    text-align: center;
+    font-size: 1.2rem; /* Más grande */
+    font-weight: bold;
+    margin: 1rem 0; /* Mayor separación */
+    margin-bottom: 0.3rem;
+}
+
+.paula {
+    text-align: center;
+    font-size: 1.5rem; /* Más pequeño */
+    font-weight: lighter;
+    margin-top: 0rem;
+}
+
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom:  0rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+/* Efecto de máquina de escribir */
+#typewriter {
+    font-size: 1.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    overflow: hidden;
+    border-right: 2px solid #333;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    60% {
+        border-color: #333;
+    }
+}
+
+/* Barra de progreso */
+.progress-bar {
+    margin-bottom: 1rem;
+}
+
+.bar {
+    width: 100%;
+    background-color: #7369699e;
+    border-radius: 50px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress {
+    height: 100%;
+    width: 0%; /* Inicia vacío */
+    background-color: #280c6e;
+    border-radius: 5px;
+    transition: width 0.8s ease-in-out; /* Para animar el cambio de tamaño */
+}
+
+/* Projects Section */
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* Espaciado uniforme */
+    align-items: center;
+    padding: 6vw 4vw; /* Incrementa espacio superior */
+    background-color: #d8dbd3cf;
+    height: 100vh; /* Ocupa toda la pantalla */
+    box-sizing: border-box;
+    overflow: hidden; /* Oculta contenido desbordado */
+}
+
+.projects-title-line {
+    display: flex;
+    justify-content: left; /* Alinea el título a la izquierda */
+    align-items: center;
+    gap: 0vw;
+    width: 100%;
+    margin-bottom: 0rem; /* Añade espacio debajo del título */
+}
+
+.projects-title {
+    font-size: 3vw; /* Escala ligeramente el tamaño */
+    font-weight: bold;
+    color: #280c6e;
+    margin: 0;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center; /* Centra las cajas */
+    align-items: center;
+    flex-wrap: wrap; /* Permite ajuste dinámico */
+    width: 100%;
+    gap: 3.5vw; /* Mayor espacio entre elementos */
+    height: 50%; /* Ajusta altura relativa */
+    padding: 0vw; /* Añade espacio interno */
+}
+
+.project-box {
+    position: relative;
+    flex: 1 1 18%; /* Tamaño reducido acorde */
+    max-width: 18%; /* Limita el ancho */
+    height: 75%; /* Reduce altura */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    margin: 1vw; /* Añade margen extra */
+}
+
+.project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 10px;
+}
+
+.project-box:hover img {
+    transform: scale(1.1);
+    filter: grayscale(100%);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.project-box:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h2 {
+    font-size: 1.2rem; /* Escala menor */
+    margin: 0;
+}
+
+.project-overlay p {
+    font-size: 0.9rem; /* Escala menor */
+    margin: 0.5rem 0 0;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.modal-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #280c6e;
+}
+
+.modal-description p {
+    font-size: 1.2rem;
+    text-align: justify; /* Justificar el texto */
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.modal-images {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modal-images img {
+    width: calc(25% - 1rem);
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.modal-images img:hover {
+    transform: scale(1.1);
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Extras Subtitle */
+.extras-title {
+    font-size: 1vw; /* Ajusta el tamaño */
+    color: #280c6e;
+    margin-top: 0rem; /* Mayor espacio superior */
+    margin-left: 0; /* Alinear a la izquierda */
+    text-align: left; /* Asegura el texto alineado */
+    width: 65%; /* Ocupa todo el ancho */
+}
+
+/* Slider Section */
+.slider-container {
+    position: relative;
+    width: 66.1%;
+    height: 40%; /* Ajusta la altura del slider */
+    overflow: hidden;
+    margin-top: 0.2rem; /* Más espacio superior */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-btn.prev {
+    left: 0;
+}
+
+.slider-btn.next {
+    right: 0;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    #projects {
+        padding: 3rem 1rem;
+        height: 100vh; /* Mantener ocupando toda la pantalla */
+    }
+
+    .projects-container {
+        flex-direction: column; /* Cambiar a diseño vertical */
+        gap: 2rem; /* Más espacio entre cajas */
+        height: auto; /* Ajustar altura automáticamente */
+        padding: 1rem;
+    }
+
+    .project-box {
+        flex: 1 1 80%; /* Usar 80% del ancho disponible */
+        max-width: 80%;
+        height: auto;
+    }
+
+    .projects-title {
+        font-size: 4vw; /* Escalar título en pantallas pequeñas */
+    }
+
+    .extras-title {
+        font-size: clamp(1.5rem, 2.5vw, 3rem); /* Tamaño adaptativo */
+    }
+
+    .slider-container {
+        height: 30%; /* Reducir altura del slider */
+    }
+
+    .slide img {
+        border-radius: 10px;
+    }
+}
+
+

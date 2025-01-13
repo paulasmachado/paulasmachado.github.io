@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO - Paula Machado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#inicio">PPM</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">About</a></li>
+                <li><a href="#proyectos">Projects</a></li>
+                <li><a href="#contacto">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portada -->
+<section id="inicio" class="hero">
+    <div class="collage-container">
+    
+        <div class="collage-item">
+            <img src="Imagenes portada/01_TEAPOT KEYSHOT_FINAL.9.png" alt="Imagen 1">
+        </div>
+        <div class="collage-item">
+            <img src="Imagenes portada/0.jpg" alt="Imagen 2">
+        </div>
+        <div class="collage-item">
+            <img src="Imagenes portada/IMG_7171.JPG" alt="Imagen 3">
+        </div>
+        <div class="collage-item">
+            <img src="Imagenes portada/IMG-3573 (1).jpg" alt="Imagen 4">
+        </div>
+        <div class="collage-item">
+            <img src="Imagenes portada/File_019.png" alt="Imagen 5">
+        </div>
+
+        <div class="texto">
+            <p class="titulo-principal">PORTFOLIO</p>
+            <p class="subtitulo">by Paula Machado</p>
+        </div>
+
+</section>
+<section id="about">
+    <div class="about-title-line">
+        <h1 class="about-title">ABOUT</h1>
+        <h1 class="me-title">me</h1>
+    </div>    
+   
+    <div class="about-container">
+        <!-- Primera columna: Imagen -->
+        <div class="about-image">
+            <img src="Imagenes portada/IMG_4927.jpg" alt="Profile Picture">
+            <p class="hello">Hello there!</p>
+            <p class="paula">I'm Paula</p>
+        </div>
+
+        <!-- Segunda columna: Who Am I -->
+        <div class="about-column">
+            <h2>Who Am I</h2>
+            <!-- INICIO DEL EFECTO DE MÁQUINA DE ESCRIBIR -->
+            <div id="typewriter-container">
+                <span id="typewriter"></span><span id="cursor"></span>
+            </div>
+            <!-- FIN DEL EFECTO DE MÁQUINA DE ESCRIBIR -->
+        </div>
+
+        <!-- Tercera columna: Información adicional -->
+        <div class="about-column">
+            <h2>Education</h2>
+            <p>September 2021 – Present</p>
+            <p class="bold-text">UDIT - Universidad de Diseño y Tecnología</p>
+            <p>Product Design</p>
+
+            <h2>Work</h2>
+            <p>April 2024 – December 2024</p>
+            <p class="bold-text">Woodendot</p>
+            <p>Furniture designer</p>
+
+        </div>
+
+        <!-- Cuarta columna: Software, Idiomas, etc. -->
+        <div class="about-column">
+            <h2>Languages</h2>
+            <p>- Spanish</p>
+            <p>- English</p>
+
+            <h2>Softwares</h2>
+             <!-- INICIO DE LAS BARRAS DE PROGRESO -->
+             <div class="progress-bar">
+                <label>Rhinoceros 3D</label>
+                <div class="bar">
+                    <div class="progress" data-target="90"></div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <label>Keyshot</label>
+                <div class="bar">
+                    <div class="progress" data-target="80"></div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <label>Adobe</label>
+                <div class="bar">
+                    <div class="progress" data-target="70"></div>
+                </div>
+            </div>
+            <!-- FIN DE LAS BARRAS DE PROGRESO -->
+        </div>
+    </div>
+</section>
+
+
+<section id="projects">
+    <!-- Projects Title -->
+    <div class="projects-title-line">
+        <h1 class="projects-title">PROJECTS</h1>
+    </div>
+
+    <!-- Projects Container -->
+    <div class="projects-container">
+        <!-- Project 1 -->
+        <div class="project-box" onclick="openProjectDetails('Project 1', 'Description of Project 1', ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'])">
+            <img src="Imagenes portada/IMG-3573 (1).jpg" alt="Project 1">
+            <div class="project-overlay">
+                <h2>SPLICK</h2>
+                <p>your adventure partner</p>
+            </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-box" onclick="openProjectDetails('Project 2', 'Description of Project 2', ['img5.jpg', 'img6.jpg', 'img7.jpg', 'img8.jpg'])">
+            <img src="Imagenes portada/IMG_7311_Original.jpeg" alt="Project 2">
+            <div class="project-overlay">
+                <h2>Project 2</h2>
+                <p>A brief subtitle</p>
+            </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-box" onclick="openProjectDetails('Project 3', 'Description of Project 3', ['img9.jpg', 'img10.jpg', 'img11.jpg', 'img12.jpg'])">
+            <img src="Imagenes portada/IMG_7164.JPG" alt="Project 3">
+            <div class="project-overlay">
+                <h2>Project 3</h2>
+                <p>A brief subtitle</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Extras Subtitle -->
+    <h2 class="extras-title">Some behind the scenes and extra small projects</h2>
+
+    <!-- Slider Section -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="Imagenes portada/IMAGEN 01_Paula Machado Gallardo Verallia 2022.jpg" alt="Extra 1"></div>
+            <div class="slide"><img src="extra2.jpg" alt="Extra 2"></div>
+            <div class="slide"><img src="extra3.jpg" alt="Extra 3"></div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+    </div>
+</section>
+
+<!-- Ventana Emergente -->
+<div id="project-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-header">
+            <h1 id="modal-title"></h1>
+        </div>
+        <div class="modal-description">
+            <p id="modal-description"></p>
+        </div>
+        <div class="modal-images" id="modal-images"></div>
+    </div>
+</div>
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
