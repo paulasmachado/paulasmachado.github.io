@@ -329,36 +329,40 @@ p {
     gap: 0vw;
     width: 100%;
     margin-bottom: 0rem; /* Añade espacio debajo del título */
+    margin-top: 10px;
 }
 
 .projects-title {
     font-size: 3vw; /* Escala ligeramente el tamaño */
     font-weight: bold;
     color: #280c6e;
-    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .projects-container {
-    display: flex;
-    justify-content: center; /* Centra las cajas */
-    align-items: center;
-    flex-wrap: wrap; /* Permite ajuste dinámico */
-    width: 100%;
-    gap: 3.5vw; /* Mayor espacio entre elementos */
-    height: 50%; /* Ajusta altura relativa */
-    padding: 0vw; /* Añade espacio interno */
+    display: inline-flex; /* Activa el diseño de flexbox */
+    justify-content: space-between; /* Espacio uniforme entre los proyectos */
+    align-items: flex-start; /* Alinea los elementos al principio vertical */
+    flex-wrap: nowrap; /* Evita que los elementos se muevan a la siguiente línea */
+    height: 800px;
+    width: 70%; /* Usa todo el ancho disponible */
+    padding: 0; /* Sin espacio interno adicional */
+    box-sizing: content-box; /* Incluye bordes y relleno en las dimensiones */
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .project-box {
     position: relative;
     flex: 1 1 18%; /* Tamaño reducido acorde */
-    max-width: 18%; /* Limita el ancho */
-    height: 75%; /* Reduce altura */
+    max-width: 30%; /* Limita el ancho */
+    height: 50%; /* Reduce altura */
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
-    margin: 1vw; /* Añade margen extra */
+    margin: 0vw; /* Añade margen extra */
 }
 
 .project-box img {
@@ -367,6 +371,7 @@ p {
     object-fit: cover;
     transition: transform 0.3s ease, filter 0.3s ease;
     border-radius: 10px;
+    display: block;
 }
 
 .project-box:hover img {
@@ -425,7 +430,7 @@ p {
     max-width: 1200px;
     background-color: #fff;
     border-radius: 10px;
-    padding: 2rem;
+    padding: 0rem;
     box-sizing: border-box;
     color: #333;
 }
@@ -446,7 +451,7 @@ p {
 .modal-images {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: rem;
     flex-wrap: wrap;
 }
 
@@ -475,19 +480,24 @@ p {
 .extras-title {
     font-size: 1vw; /* Ajusta el tamaño */
     color: #280c6e;
-    margin-top: 0rem; /* Mayor espacio superior */
+    margin-top: 0; /* Mayor espacio superior */
     margin-left: 0; /* Alinear a la izquierda */
     text-align: left; /* Asegura el texto alineado */
     width: 65%; /* Ocupa todo el ancho */
 }
 
+.extras-title + .projects-container {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
 /* Slider Section */
 .slider-container {
     position: relative;
-    width: 66.1%;
-    height: 40%; /* Ajusta la altura del slider */
+    width: 1100px;
+    height: 700px; /* Ajusta la altura del slider */
     overflow: hidden;
-    margin-top: 0.2rem; /* Más espacio superior */
+    margin-top: 0; /* Más espacio superior */
 }
 
 .slider {
@@ -528,11 +538,24 @@ p {
     right: 0;
 }
 
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    margin-top: 0px;
+    font-size: 0.9em;
+}
+
+
+
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
     #projects {
         padding: 3rem 1rem;
         height: 100vh; /* Mantener ocupando toda la pantalla */
+        margin-bottom: 0px;
     }
 
     .projects-container {
@@ -540,6 +563,7 @@ p {
         gap: 2rem; /* Más espacio entre cajas */
         height: auto; /* Ajustar altura automáticamente */
         padding: 1rem;
+        margin-bottom: 0px;
     }
 
     .project-box {
@@ -550,6 +574,7 @@ p {
 
     .projects-title {
         font-size: 4vw; /* Escalar título en pantallas pequeñas */
+        border-bottom: 2px;
     }
 
     .extras-title {

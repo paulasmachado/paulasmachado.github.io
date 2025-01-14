@@ -93,3 +93,57 @@ nextBtn.addEventListener('click', () => {
     currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
     updateSliderPosition();
 });
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Evita el envío del formulario
+
+    // Variables
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Elementos de error
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const messageError = document.getElementById("message-error");
+    const successMessage = document.getElementById("success-message");
+
+    let isValid = true;
+
+    // Validación de nombre
+    if (name === "") {
+        nameError.textContent = "Name is required.";
+        nameError.style.display = "block";
+        isValid = false;
+    } else {
+        nameError.style.display = "none";
+    }
+
+    // Validación de email
+    if (email === "") {
+        emailError.textContent = "Email is required.";
+        emailError.style.display = "block";
+        isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+        emailError.textContent = "Enter a valid email address.";
+        emailError.style.display = "block";
+        isValid = false;
+    } else {
+        emailError.style.display = "none";
+    }
+
+    // Validación de mensaje
+    if (message === "") {
+        messageError.textContent = "Message is required.";
+        messageError.style.display = "block";
+        isValid = false;
+    } else {
+        messageError.style.display = "none";
+    }
+
+    // Si es válido, mostrar mensaje de éxito
+    if (isValid) {
+        successMessage.style.display = "block";
+        this.reset(); // Reinicia el formulario
+    }
+});

@@ -14,9 +14,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#sobre">About</a></li>
-                <li><a href="#proyectos">Projects</a></li>
-                <li><a href="#contacto">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="contacto.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -29,16 +29,16 @@
             <img src="Imagenes portada/01_TEAPOT KEYSHOT_FINAL.9.png" alt="Imagen 1">
         </div>
         <div class="collage-item">
-            <img src="Imagenes portada/0.jpg" alt="Imagen 2">
+            <img src="Imagenes portada/IMG_4995 (1).jpg" alt="Imagen 2">
         </div>
         <div class="collage-item">
-            <img src="Imagenes portada/IMG_7171.JPG" alt="Imagen 3">
+            <img src="Imagenes portada/IMG_7344_Original (1).jpeg" alt="Imagen 3">
         </div>
         <div class="collage-item">
-            <img src="Imagenes portada/IMG-3573 (1).jpg" alt="Imagen 4">
+            <img src="Imagenes portada/IMG_7183_Original.jpg" alt="Imagen 4">
         </div>
         <div class="collage-item">
-            <img src="Imagenes portada/File_019.png" alt="Imagen 5">
+            <img src="Imagenes portada/0.jpg" alt="Imagen 5">
         </div>
 
         <div class="texto">
@@ -123,33 +123,37 @@
         <h1 class="projects-title">PROJECTS</h1>
     </div>
 
-    <!-- Projects Container -->
     <div class="projects-container">
+
         <!-- Project 1 -->
-        <div class="project-box" onclick="openProjectDetails('Project 1', 'Description of Project 1', ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'])">
-            <img src="Imagenes portada/IMG-3573 (1).jpg" alt="Project 1">
+        <a href="proyecto 1_silla.html" class="project-box">
+            <img src="Imagenes portada/IMG_6989_Original.jpg" alt="Project 1">
+            <div class="project-overlay">
+                <h2>CALIX ARMCHAIR</h2>
+                <p>Your adventure partner</p>
+            </div>
+        </a>
+    
+        <!-- Project 2 -->
+        <a href="proyecto 2_splick.html" class="project-box">
+            <img src="Imagenes portada/File_031.png" alt="Project 2">
             <div class="project-overlay">
                 <h2>SPLICK</h2>
-                <p>your adventure partner</p>
+                <p>Your Adventure Partner</p>
             </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="project-box" onclick="openProjectDetails('Project 2', 'Description of Project 2', ['img5.jpg', 'img6.jpg', 'img7.jpg', 'img8.jpg'])">
-            <img src="Imagenes portada/IMG_7311_Original.jpeg" alt="Project 2">
-            <div class="project-overlay">
-                <h2>Project 2</h2>
-                <p>A brief subtitle</p>
-            </div>
-        </div>
+        </a>
+    
         <!-- Project 3 -->
-        <div class="project-box" onclick="openProjectDetails('Project 3', 'Description of Project 3', ['img9.jpg', 'img10.jpg', 'img11.jpg', 'img12.jpg'])">
-            <img src="Imagenes portada/IMG_7164.JPG" alt="Project 3">
+        <a href="proyecto 3_mesa.html" class="project-box">
+            <img src="Imagenes portada/IMG_7168_Original.jpg" alt="Project 3">
             <div class="project-overlay">
-                <h2>Project 3</h2>
-                <p>A brief subtitle</p>
+                <h2>CÁMBIUM TABLE</h2>
+                <p>Sofa side table</p>
             </div>
-        </div>
+        </a>
     </div>
+
+
 
     <!-- Extras Subtitle -->
     <h2 class="extras-title">Some behind the scenes and extra small projects</h2>
@@ -157,9 +161,10 @@
     <!-- Slider Section -->
     <div class="slider-container">
         <div class="slider">
-            <div class="slide"><img src="Imagenes portada/IMAGEN 01_Paula Machado Gallardo Verallia 2022.jpg" alt="Extra 1"></div>
-            <div class="slide"><img src="extra2.jpg" alt="Extra 2"></div>
-            <div class="slide"><img src="extra3.jpg" alt="Extra 3"></div>
+            <div class="slide"><img src="Imagenes portada/D850BE8E-AA54-4457-A374-FCE16A6DEC19_Original.jpeg" alt="Extra 1"></div>
+            <div class="slide"><img src="Imagenes portada/IMG_4993.jpeg" alt="Extra 2"></div>
+            <div class="slide"><img src="Imagenes portada/IMG_4994.jpeg" alt="Extra 3"></div>
+            <div class="slide"><img src="Imagenes portada/IMG_7245_Original.jpeg" alt="Extra 3"></div>
         </div>
 
         <!-- Slider Navigation -->
@@ -168,19 +173,10 @@
     </div>
 </section>
 
-<!-- Ventana Emergente -->
-<div id="project-modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-header">
-            <h1 id="modal-title"></h1>
-        </div>
-        <div class="modal-description">
-            <p id="modal-description"></p>
-        </div>
-        <div class="modal-images" id="modal-images"></div>
-    </div>
-</div>
+
+<footer>
+    <p>&copy; 2025 Paula Machado</p>
+</footer>
 
 
     <script src="scripts.js"></script>
